@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 1366px;
+   
+}
+td {
+    width:100%;
+}
+nav {
+    background-color:yellowgreen;
+    color: #fff;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#content {
+    padding: 20px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: green;
+    color: #fff;
+    text-align: left;
+    padding: 1em 0;
+    bottom: 0;
+    width: 1366px;
+}
+
+table{
+    color: aliceblue;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    
+}
+h1 image {
+    width: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea, select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: yellowgreen;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.banner-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.banner-wrapper img {
+    margin-top: -150px;   /* naikkan gambar ke atas */
+    width: 100%;       /* tetap full width */
+    max-width: 1200px; /* biar tidak terlalu besar di layar besar */
+    display: block;
+}

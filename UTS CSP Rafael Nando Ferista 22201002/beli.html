@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Toko Kokoracii</title>
+    <style>
+        table {
+            background-color: black;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            background-color: black;
+            border: 1px solid gray;
+        }
+        th, td {
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-Commerce</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="beranda.html">Home </a></li>
+            <li><a href="produk.html">Product</a></li>
+            <li><a href="kontak.html">Contact</a></li>
+            <li style="float:right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <h2 style="color:black;">Form Pembelian</h2>
+    <form action="proses_pembelian.php" method="post">
+        <table>
+            <tr>
+                <th style="color: #f2f2f2;">Nama Barang</th>
+                <th style="color: #f2f2f2;">Jumlah</th>
+                <th style="color: #f2f2f2;">Harga Satuan</th>
+                <th style="color: #f2f2f2;">Total Harga</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="nama_barang[]" required></td>
+                <td><input type="number" name="jumlah[]" required></td>
+                <td><input type="number" name="harga_satuan[]" required></td>
+                <td><input type="text" name="total_harga[]" readonly></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Proses Pembelian">
+    </form>
+
+    <script>
+        document.querySelector("table").addEventListener("input", function (event) {
+            if (event.target.name === "jumlah[]" || event.target.name === "harga_satuan[]") {
+                const rowIndex = event.target.closest("tr").rowIndex;
+                const jumlah = parseFloat(document.getElementsByName(`jumlah[]`)[rowIndex - 1].value) || 0;
+                const hargaSatuan = parseFloat(document.getElementsByName(`harga_satuan[]`)[rowIndex - 1].value) || 0;
+                const totalHarga = jumlah * hargaSatuan;
+                document.getElementsByName(`total_harga[]`)[rowIndex - 1].value = totalHarga.toFixed(2);
+            }
+        });
+    </script>
+<footer >
+    <p>&copy; tokokokoracii 2025. Hak Cipta Dilindungi.></p>
+</footer>
+</body>
+</html>
